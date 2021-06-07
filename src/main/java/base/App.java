@@ -28,17 +28,6 @@ public class App
         double tax;
         double total;
 
-        myApp.inputs(priceOne, priceTwo, priceThree, quantOne, quantTwo, quantThree);
-        subTotal = myApp.calcSub(priceOne, priceTwo, priceThree, quantOne, quantTwo, quantThree);
-        tax = myApp.calculate(subTotal);
-        total = subTotal + tax;
-        System.out.printf("Subtotal: %d", subTotal);
-        System.out.printf("Tax: %.2f", tax);
-        System.out.printf("Total: %.2f", total);
-    }
-
-    public void inputs(int priceOne, int priceTwo, int priceThree, int quantOne, int quantTwo, int quantThree)
-    {
         System.out.print("Enter the price of item 1: ");
         priceOne = oneIn.nextInt();
         System.out.print("Enter the quantity of item 1: ");
@@ -53,6 +42,13 @@ public class App
         priceThree = threeIn.nextInt();
         System.out.print("Enter the quantity of item 3: ");
         quantThree = item3In.nextInt();
+
+        subTotal = myApp.calcSub(priceOne, priceTwo, priceThree, quantOne, quantTwo, quantThree);
+        tax = myApp.calculate(subTotal);
+        total = subTotal + tax;
+        System.out.printf("Subtotal: %d\n", subTotal);
+        System.out.printf("Tax: %.2f\n", tax);
+        System.out.printf("Total: %.2f", total);
     }
 
     public int calcSub(int priceOne, int priceTwo, int priceThree, int quantOne, int quantTwo, int quantThree)
